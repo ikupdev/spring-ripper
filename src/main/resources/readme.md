@@ -23,3 +23,14 @@ InjectRandomIntAnnotationBeanPostProcessor рассчитывает, что бу
 Получается, что postConstruct всегда работает на оригинальный метод init! 
 
 ProfilingControllerMBean - для мониторинга через java8/bin/JavaVisualVM.exe
+
+ApplicationListener
+
+ContextStartedEvent - контекст начал свое построение
+ContextStoppedEvent 
+**ContextRefreshedEvent** - перед окончанием построения
+ContextClosedEvent
+
+Из любого ивента можно вытащить контекст.
+
+на этапе PostConstruct нет никаких proxy, поэтому профилирование только в sayQuote!
