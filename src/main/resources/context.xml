@@ -9,6 +9,8 @@
 
     <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
     <bean class="ru.kuper.InjectRandomIntAnnotationBeanPostProcessor"/>
+    <bean class="ru.kuper.ProfilingHandlerBeanPostProcessor"/>
+
     <bean class="ru.kuper.TerminatorQuoter" id="terminatorQuoter">
         <property name="message" value="I'll be back"/>
     </bean>
