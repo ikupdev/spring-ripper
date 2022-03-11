@@ -38,3 +38,21 @@ ContextClosedEvent
 BeanFactoryPostProcessor - позволяет настраивать бин дефинишны, до того, как создаются бины (до всяких BeanPostProcessor-ов)
 
 Добавляем функционал: все бины, которые DeprecatedClass должны быть заменены на новую (не устаревшую) версию
+
+ClassPathBeanDefinitionScanner - это ResourceLoaderAware - создает BeanDefinitions из всех классов, 
+над которыми стоит @Component, или другая аннотация, аннотированная @Component
+
+AnnotationConfigApplicationContext. 
+Использует AnnotatedBeanDefinitionReader - который ничего не имплементирует (в отличие от BeanDefinitionReader, как с xml)
+Он просто является частью ApplicationContext.
+Он только регистрирует все JavaConfig.
+
+Кто обрабатывает JavaConfig?
+ConfigurationClassPostProcessor (особый BeanFactoryPostProcessor)
+Его регистрирует AnnotationConfigApplicationContext.
+Он создает бин-дефинишены по @Bean
+А так же относится к:
+@Import
+@ImportResource
+@ComponentScan
+
