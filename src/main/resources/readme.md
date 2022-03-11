@@ -61,3 +61,5 @@ ConfigurationClassPostProcessor (особый BeanFactoryPostProcessor)
 2. ColorFrame - синглтон, а цвет Color - prototype, но нет причин, чтобы для синглтона отдавать разный объект цвета prototype! 
 3. Нужно обновить prototype-объект в синглтоне. 
 4. Плохое решение - сильный coupling на applicationContext! но работает
+5. Решение получше - для Color @Scope(value = "prototype", proxyMode = ScopedProxyMode.TARGET_CLASS)
+при каждом обращении к бину - получаем новый инстанс.
