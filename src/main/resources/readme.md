@@ -56,3 +56,5 @@ ConfigurationClassPostProcessor (особый BeanFactoryPostProcessor)
 @ImportResource
 @ComponentScan
 
+Обновление prototype в синглтоне и написание кастомного скоупа. 
+1. JFrame, у которого цвет пока что не меняется. А нужно, чтобы менялся!
