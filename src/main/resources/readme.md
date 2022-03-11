@@ -58,3 +58,4 @@ ConfigurationClassPostProcessor (особый BeanFactoryPostProcessor)
 
 Обновление prototype в синглтоне и написание кастомного скоупа. 
 1. JFrame, у которого цвет пока что не меняется. А нужно, чтобы менялся!
+2. ColorFrame - синглтон, а цвет Color - prototype, но нет причин, чтобы для синглтона отдавать разный объект цвета prototype! 

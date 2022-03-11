@@ -1,9 +1,6 @@
 package ru.kuper.screensaver;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.*;
 
 import java.awt.*;
 import java.util.Random;
@@ -17,6 +14,7 @@ import java.util.Random;
 public class Config {
 
     @Bean
+    @Scope("prototype")
     public Color color() {
         Random random = new Random();
         return new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255));
@@ -26,7 +24,7 @@ public class Config {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
         while (true) {
             context.getBean(ColorFrame.class).shoeOnRandomPlace();
-            Thread.sleep(1000);
+            Thread.sleep(50);
         }
     }
 }
